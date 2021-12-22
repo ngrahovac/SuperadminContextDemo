@@ -14,3 +14,7 @@ Subsystems communicate via `NServiceBus` events. Some examples of messages are:
 2. A group event was removed by the user who created it and superadmin is being notified to remove appropriate records from their database, as there is no need for tracking or moderating this piece of content anymore.
 
 3. A piece of content (e.g. group event) was (marked as) removed by the superadmin and the main context is being notified about this. In the main database, this event will also be marked as removed by the superadmin (this property can be configured as a shadow property). EF Core filter can be established so that entities removed by the superadmin are never returned from the database.
+
+A rough model outline can be seen below:
+
+![image](https://user-images.githubusercontent.com/26906390/147080278-171fc487-581a-45cf-9236-759c7ef43c88.png)
